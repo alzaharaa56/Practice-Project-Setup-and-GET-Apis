@@ -9,10 +9,9 @@ public class BookController {
     private static List<Book> bookshelf = new ArrayList<>();
 
 
-    @GetMapping("/addBook")
-    public String addBook(@RequestParam int id, @RequestParam String name) {
+   @GetMapping("/addBook")
+    public String addBook(@RequestParam int id, @RequestParam String name, int authorId) {
 
-        int authorId = 0;
         Book newBook = new Book(id, name, authorId);
         bookshelf.add(newBook);
         return "Book added successfully!";
