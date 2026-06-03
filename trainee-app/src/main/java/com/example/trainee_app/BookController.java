@@ -9,7 +9,7 @@ public class BookController {
     private static List<Book> bookshelf = new ArrayList<>();
 
 
-   @GetMapping("/addBook")
+   //@GetMapping("/addBook")
     public String addBook(@RequestParam int id, @RequestParam String name, int authorId) {
 
         Book newBook = new Book(id, name, authorId);
