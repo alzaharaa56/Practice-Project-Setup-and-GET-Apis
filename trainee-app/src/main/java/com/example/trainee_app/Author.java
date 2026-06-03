@@ -1,16 +1,14 @@
 package com.example.trainee_app;
 
-public class Book {
-
+public class Author {
     private int id;
     private String name;
-    private int authorId;
+    private String biography;
 
-
-    public Book(int id, String name, int authorId) {
+    public Author(int id, String name, String biography) {
         this.id = id;
         this.name = name;
-        this.authorId = authorId;
+        this.biography = biography;
     }
 
 
@@ -29,12 +27,13 @@ public class Book {
     public void setName(String name) {
         this.name = name;
     }
-    public int getAuthorId() {
-        return authorId; }
 
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
+    public String getBiography() {
+        return biography;
     }
 
-
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
 }
+

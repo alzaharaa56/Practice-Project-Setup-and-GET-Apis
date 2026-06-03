@@ -9,21 +9,23 @@ public class BookController {
     private static List<Book> bookshelf = new ArrayList<>();
 
 
-    @GetMapping("/add-book")
+    @GetMapping("/addBook")
     public String addBook(@RequestParam int id, @RequestParam String name) {
-        Book newBook = new Book(id, name);
+
+        int authorId = 0;
+        Book newBook = new Book(id, name, authorId);
         bookshelf.add(newBook);
         return "Book added successfully!";
     }
 
 
-    @GetMapping("/all-books")
+    @GetMapping("/allBooks")
     public List<Book> getAllBooks() {
         return bookshelf;
     }
 
 
-    @GetMapping("/find-by-id")
+    @GetMapping("/findById")
     public Book findById(@RequestParam int id) {
         for (Book b : bookshelf) {
             if (b.getId() == id) {
@@ -34,7 +36,7 @@ public class BookController {
     }
 
 
-    @GetMapping("/find-by-name")
+    @GetMapping("/findByName")
     public Book findByName(@RequestParam String name) {
         for (Book b : bookshelf) {
 
@@ -46,7 +48,7 @@ public class BookController {
     }
 
 
-    @GetMapping("/search-msg")
+    @GetMapping("/searchMsg")
     public String searchMsg(@RequestParam int id) {
         for (Book b : bookshelf) {
             if (b.getId() == id) {
